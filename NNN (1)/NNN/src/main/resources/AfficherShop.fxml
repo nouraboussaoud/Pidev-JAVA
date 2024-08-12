@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="main_form" prefHeight="541.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controllers.AfficherShop">
+   <children>
+      <ImageView fitHeight="733.0" fitWidth="919.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Front/backgroundfront.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="28.0" layoutY="229.0" prefHeight="310.0" prefWidth="854.0">
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+            <String fx:value="radius" />
+            <String fx:value="scroula" />
+         </styleClass>
+         <children>
+            <ScrollPane fx:id="menu_scrollPane" layoutX="86.0" layoutY="23.0" prefHeight="284.0" prefWidth="659.0">
+               <content>
+                  <GridPane fx:id="menu_gridPane" prefHeight="13.0" prefWidth="111.0">
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+         <stylesheets>
+            <URL value="@CSS/shop.css" />
+            <URL value="@CSS/Front/Front.css" />
+         </stylesheets>
+      </AnchorPane>
+      <Pane layoutX="14.0" layoutY="88.0" prefHeight="66.0" prefWidth="882.0" styleClass="sidebar" stylesheets="@CSS/Dashboard.css">
+         <children>
+            <Button layoutX="735.0" layoutY="18.0" minWidth="53.0" mnemonicParsing="false" onAction="#GotoPanier" prefHeight="30.0" prefWidth="53.0" />
+            <ImageView fitHeight="54.0" fitWidth="35.0" layoutX="819.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/panier2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="14.0" layoutY="161.0" prefHeight="54.0" prefWidth="853.0" stylesheets="@CSS/shop.css">
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+            <String fx:value="radius" />
+         </styleClass>
+         <children>
+            <Text fill="#48cd27" layoutX="234.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To Our Shop" wrappingWidth="442.8173828125">
+               <font>
+                  <Font name="Bauhaus 93" size="44.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="5.0" prefHeight="95.0" prefWidth="901.0">
+         <children>
+            <ImageView fitHeight="68.0" fitWidth="60.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Front/logo.png" />
+               </image>
+            </ImageView>
+            <Circle layoutX="770.0" layoutY="48.0" radius="19.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="52.0" layoutY="37.0" prefHeight="29.0" prefWidth="60.0" text="NNN.">
+               <font>
+                  <Font name="Tw Cen MT Condensed Extra Bold" size="28.0" />
+               </font>
+            </Label>
+            <Button layoutX="260.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToEvents" prefHeight="47.0" prefWidth="76.0" styleClass="buttonmenu" stylesheets="@CSS/Front/Front.css" text="events" />
+            <Button layoutX="352.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToGroups" prefHeight="47.0" prefWidth="76.0" styleClass="buttonmenu" stylesheets="@CSS/Front/Front.css" text="groups" />
+            <Button layoutX="447.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToQuiz" prefHeight="47.0" prefWidth="76.0" styleClass="buttonmenu" stylesheets="@CSS/Front/Front.css" text="quiz" />
+            <Button layoutX="546.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToMarket" prefHeight="47.0" prefWidth="94.0" styleClass="buttonmenu" stylesheets="@CSS/Front/Front.css" text="market" />
+            <Button fx:id="profilename" layoutX="789.0" layoutY="31.0" mnemonicParsing="false" onAction="#gotoprofile" prefHeight="33.0" prefWidth="94.0" styleClass="buttonmenu" stylesheets="@CSS/Front/Front.css" text="Button" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
